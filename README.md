@@ -11,6 +11,10 @@
 
 By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and Bin Xu
 
+<div align=center>
+<img src="https://github.com/hey-it-s-me/PromptFusion/" width="80%">
+</div>
+
 ## Updates
 [2024-12-05] Our paper is available online! [(https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878)] 
 
