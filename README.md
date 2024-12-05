@@ -16,7 +16,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 </div>
 
 ## Updates
-[2024-12-05] Our paper is available online! [(https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878)] 
+[2024-12-05] Our paper is available online! [https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878] 
 
 ## Citation
 ```
