@@ -12,7 +12,7 @@
 By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and Bin Xu
 
 <div align=center>
-<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/network.png" width="60%">
+<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/network.png" width="40%">
 </div>
 
 ## Updates
