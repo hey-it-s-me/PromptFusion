@@ -18,6 +18,14 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 ## Updates
 [2024-12-05] Our paper is available online! [[Paper](https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878)] 
 
+## Requirements
+- CUDA 10.1
+- Python 3.6 (or later)
+- Pytorch 1.6.0
+- Torchvision 0.7.0
+- OpenCV 3.4
+- Kornia 0.5.11
+
 ## Citation
 ```
 @article{liu2024promptfusion,
