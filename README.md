@@ -18,6 +18,9 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 ## Updates
 [2024-12-05] Our paper is available online! [https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878] 
 
+##Abstract
+The goal of infrared and visible image fusion (IVIF) is to integrate the unique advantages of both modalities to achieve a more comprehensive understanding of a scene. However, existing methods struggle to effectively handle modal disparities, resulting in visual degradation of the details and prominent targets of the fused images. To address these challenges, we introduce PromptFusion, a prompt-based approach that harmoniously combines multi-modality images under the guidance of semantic prompts. Firstly, to better characterize the features of different modalities, a contourlet autoencoder is designed to separate and extract the high-/low-frequency components of different modalities, thereby improving the extraction of fine details and textures. We also introduce a prompt learning mechanism using positive and negative prompts, leveraging Vision-Language Models to improve the fusion model’s understanding and identification of targets in multi-modality images, leading to improved performance in downstream tasks. Furthermore, we employ bi-level asymptotic convergence optimization. This approach simplifies the intricate non-singleton non-convex bi-level problem into a series of convergent and differentiable single optimization problems that can be effectively resolved through gradient descent. Our approach advances the state-of-the-art, delivering superior fusion quality and boosting the performance of related downstream tasks.
+
 ## Citation
 ```
 @article{liu2024promptfusion,
