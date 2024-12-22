@@ -20,11 +20,6 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 
 ## Requirements
 - CUDA 10.1
-- Python 3.6 (or later)
-- Pytorch 1.6.0
-- Torchvision 0.7.0
-- OpenCV 3.4
-- Kornia 0.5.11
 
 ## Citation
 ```
