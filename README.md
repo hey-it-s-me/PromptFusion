@@ -28,7 +28,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 - scipy==1.7.3
 - timm==0.4.12
 ## Training
-# 1. Environment Preparation
+1. Environment Preparation
 ```
 # create virtual environment
 conda create -n promptfusion python=3.8.10
