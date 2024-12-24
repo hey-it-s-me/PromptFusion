@@ -20,7 +20,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 
 ## Requirements
 - CUDA 11.1
-  
+- Pytorch 1.8.1  
 ## Data preparation
 
 ## Citation
