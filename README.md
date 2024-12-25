@@ -22,11 +22,6 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 - CUDA 11.1
 - Python=3.8.10
 - Pytorch 1.8.1
-- numpy==1.21.5
-- einops==0.4.1
-- kornia==0.2.0
-- scipy==1.7.3
-- timm==0.4.12
 ## Training
 1. Environment Preparation
 ```
