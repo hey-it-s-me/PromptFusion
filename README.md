@@ -31,7 +31,7 @@ conda activate promptfusion
 # install requirements
 pip install -r requirements.txt
 ```
-2.Data Preparation
+2. Data Preparation
 
 ## Citation
 ```
