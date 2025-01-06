@@ -47,6 +47,7 @@ Run the training code to get started.
 ```
 python train.py
 ```
+## Experiments results
 ## Citation
 ```
 @article{liu2024promptfusion,
@@ -59,3 +60,4 @@ python train.py
   publisher={IEEE/CAA Journal of Automatica Sinica}
 }
 ```
+## Acknowledgement
