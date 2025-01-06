@@ -34,10 +34,11 @@ pip install -r requirements.txt
 2. Data Preparation
    
    We use [MSRS](https://github.com/Linfeng-Tang/MSRS) dataset for training, and [M3FD](https://github.com/JinyuanLiu-CV/TarDAL), TNO, Roadscene datasets for evalution.
+   
    We need to pre-process the datasets before training
-   ```
-   python dataprocessing.py
-   ```
+```
+python dataprocessing.py
+```
 
 ## Citation
 ```
