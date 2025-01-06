@@ -41,6 +41,8 @@ python dataprocessing.py
 ```
 to process the data before training.
 
+3. Start training
+
 ## Citation
 ```
 @article{liu2024promptfusion,
