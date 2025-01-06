@@ -42,7 +42,11 @@ python dataprocessing.py
 to process the data before training.
 
 3. Start training
-
+   
+Run the training code to get started.
+```
+python train.py
+```
 ## Citation
 ```
 @article{liu2024promptfusion,
