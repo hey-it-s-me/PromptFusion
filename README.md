@@ -50,11 +50,11 @@ python train.py
 ## Experiments results
 
 <div align=center>
-<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Results1.png" width="50%">
+<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Results1.png" width="80%">
 </div>
 
 <div align=center>
-<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Results2.png" width="50%">
+<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Results2.png" width="80%">
 </div>
 
 ## Citation
