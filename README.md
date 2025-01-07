@@ -49,11 +49,11 @@ python train.py
 ```
 ## Experiments results
 <div align=center>
-<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Result1" width="50%">
+<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Result1.png" width="50%">
 </div>
 
 <div align=center>
-<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Result2" width="50%">
+<img src="https://github.com/hey-it-s-me/PromptFusion/blob/main/Figure/Result2.png" width="50%">
 </div>
 ## Citation
 ```
