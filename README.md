@@ -61,3 +61,4 @@ python train.py
 }
 ```
 ## Acknowledgement
+Our codes are based on [CDDFuse](https://github.com/Zhaozixiang1228/MMIF-CDDFuse), [Contourlet-CNN](https://github.com/xKHUNx/Contourlet-CNN), thanks for their contribution.
