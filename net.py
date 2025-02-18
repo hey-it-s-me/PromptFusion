@@ -15,7 +15,6 @@ import kornia
 def stack_same_dim(x):
     """Stack a list/dict of 4D tensors of same img dimension together."""
     # Collect tensor with same dimension into a dict of list
-    # 这段代码实现了一种将具有相同图像维度的张量列表或字典堆叠在一起的功能，使得用户可以更方便地处理具有相同图像尺寸的数据。
     output = {}
     
     # Input is list
@@ -81,8 +80,6 @@ class up_conv(nn.Module):
         return x
 
 class ContourletCNN(nn.Module):
-    # 接受一些参数，包括 num_classes（分类的类别数）、input_dim（输入图像的维度，默认为 3 通道，224x224）、
-    # n_levs（轮廓波分解的级别，默认为 [0, 3, 3, 3]）、variant（模型变体，默认为 "SSF"）和 spec_type（轮廓波变换的类型，默认为 "all"）。
 
     def __init__(self, input_dim=(1, 224, 224), n_levs=[0, 3, 3, 3], variant="SSF", spec_type="all"):
         super(ContourletCNN, self).__init__()
@@ -95,7 +92,6 @@ class ContourletCNN(nn.Module):
         self.spec_type = spec_type
         
         # Conv layers parameters
-        # 这些行定义了卷积层的参数，包括每个卷积层的输出通道数。
         out_conv_1 = 64
         out_conv_2 = 64
         out_conv_3 = 128
@@ -129,7 +125,6 @@ class ContourletCNN(nn.Module):
                 in_conv_7 = out_conv_6 + 4 * input_dim[0]
                 
         # Conv layers
-        #这些行定义了模型中的卷积层，并使 nn.Conv2d创建了卷积层对象。
         self.conv_1 = nn.Conv2d(input_dim[0], out_conv_1, kernel_size=3, stride=2, padding=1)
         self.conv_2 = nn.Conv2d(in_conv_2, out_conv_2, kernel_size=3, stride=2, padding=1)
         self.conv_3 = nn.Conv2d(in_conv_3, out_conv_3, kernel_size=3, stride=1, padding=1)
@@ -650,7 +645,7 @@ class Restormer_Decoder(nn.Module):
        
         # print(base_feature.shape, detail_feature.shape)
         
-        out_enc_level0 = torch.cat((base_feature, detail_feature), dim=1) # 从第二个维度开始拼接
+        out_enc_level0 = torch.cat((base_feature, detail_feature), dim=1) 
         out_enc_level0 = self.reduce_channel(out_enc_level0)
         out_enc_level1 = self.encoder_level2(out_enc_level0)
         if inp_img is not None:

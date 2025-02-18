@@ -30,9 +30,9 @@ Configure our network
 ------------------------------------------------------------------------------
 '''
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 criteria_fusion = Fusionloss()
-model_str = 'CDDFuse'
+model_str = 'PromptFusion'
 
 # . Set the hyper-parameters for training
 num_epochs = 120  # total epoch
@@ -83,12 +83,10 @@ class TextEncoder(nn.Module):
 class Prompts(nn.Module):
     def __init__(self,prompts,initials=None):
         super(Prompts,self).__init__()
-        print("The initial prompts are:",initials)
         self.text_encoder = TextEncoder(model)
         self.tokenized_prompts= clip.tokenize(prompts).cuda()
         if isinstance(initials,list):
             text = clip.tokenize(initials).cuda()
-            # print(text)
             self.embedding_prompt = nn.Parameter(model.token_embedding(text).requires_grad_()).cuda()
         elif isinstance(initials,str):
             prompt_path=initials
@@ -106,7 +104,6 @@ class Prompts(nn.Module):
 
     def forward(self,tensor_list,flag=1):
         
-        print(self.embedding_prompt)
         text_features = self.text_encoder(self.embedding_prompt,self.tokenized_prompts)
         
         score=0
@@ -152,7 +149,7 @@ DIDF_Encoder = nn.DataParallel(Restormer_Encoder()).to(device)
 DIDF_Decoder = nn.DataParallel(Restormer_Decoder()).to(device)
 BaseFuseLayer = nn.DataParallel(BaseFeatureExtraction(dim=64, num_heads=8)).to(device)
 DetailFuseLayer = nn.DataParallel(DetailFeatureExtraction(num_layers=1)).to(device)
-# ContourletCNNLayer = nn.DataParallel(Contourletfusion(dim=64, num_heads=8)).to(device)
+
 # optimizer, scheduler and loss function
 optimizer1 = torch.optim.Adam(
     DIDF_Encoder.parameters(), lr=lr, weight_decay=weight_decay)
@@ -162,13 +159,12 @@ optimizer3 = torch.optim.Adam(
     BaseFuseLayer.parameters(), lr=lr, weight_decay=weight_decay)
 optimizer4 = torch.optim.Adam(
     DetailFuseLayer.parameters(), lr=lr, weight_decay=weight_decay)
-#optimizer5 = torch.optim.Adam(
-    #ContourletCNNLayer.parameters(), lr=lr, weight_decay=weight_decay)
+
 scheduler1 = torch.optim.lr_scheduler.StepLR(optimizer1, step_size=optim_step, gamma=optim_gamma)
 scheduler2 = torch.optim.lr_scheduler.StepLR(optimizer2, step_size=optim_step, gamma=optim_gamma)
 scheduler3 = torch.optim.lr_scheduler.StepLR(optimizer3, step_size=optim_step, gamma=optim_gamma)
 scheduler4 = torch.optim.lr_scheduler.StepLR(optimizer4, step_size=optim_step, gamma=optim_gamma)
-#scheduler5 = torch.optim.lr_scheduler.StepLR(optimizer5, step_size=optim_step, gamma=optim_gamma)
+
 MSELoss = nn.MSELoss()
 L1Loss = nn.L1Loss()
 Loss_ssim = kornia.losses.SSIM(11, reduction='mean')
@@ -203,18 +199,18 @@ for epoch in range(num_epochs):
         DIDF_Decoder.train()
         BaseFuseLayer.train()
         DetailFuseLayer.train()
-        # ContourletCNNLayer.train()
+    
         
         DIDF_Encoder.zero_grad()
         DIDF_Decoder.zero_grad()
         BaseFuseLayer.zero_grad()
         DetailFuseLayer.zero_grad()
-        # ContourletCNNLayer.zero_grad()
+        
         optimizer1.zero_grad()
         optimizer2.zero_grad()
         optimizer3.zero_grad()
         optimizer4.zero_grad()
-        # optimizer5.zero_grad()
+        
         if epoch < epoch_gap:  # Phase I
             feature_V_B, feature_V_D, _ = DIDF_Encoder(data_VIS)
             feature_I_B, feature_I_D, _ = DIDF_Encoder(data_IR)
@@ -223,7 +219,7 @@ for epoch in range(num_epochs):
 
             cc_loss_B = cc(feature_V_B, feature_I_B)
             cc_loss_D = cc(feature_V_D, feature_I_D)
-            # cc_loss_C = cc(feature_V_C, feature_I_C)
+            
             mse_loss_V = 5 * Loss_ssim(data_VIS, data_VIS_hat) + MSELoss(data_VIS, data_VIS_hat)
             mse_loss_I = 5 * Loss_ssim(data_IR, data_IR_hat) + MSELoss(data_IR, data_IR_hat)
 
@@ -248,7 +244,7 @@ for epoch in range(num_epochs):
             feature_I_B, feature_I_D, feature_I = DIDF_Encoder(data_IR)
             feature_F_B = BaseFuseLayer(feature_I_B + feature_V_B)
             feature_F_D = DetailFuseLayer(feature_I_D + feature_V_D)
-            # feature_F_C = ContourletCNNLayer(feature_I_C + feature_V_C)
+
             data_Fuse, feature_F = DIDF_Decoder(data_VIS, feature_F_B, feature_F_D)
             image_feature = get_image_feature(data_Fuse)
             A_similarity = A_prompts(image_feature)
@@ -259,7 +255,7 @@ for epoch in range(num_epochs):
 
             cc_loss_B = cc(feature_V_B, feature_I_B)
             cc_loss_D = cc(feature_V_D, feature_I_D)
-            # cc_loss_C = cc(feature_V_C, feature_I_C)
+
             loss_decomp = (cc_loss_D) ** 2  / (1.01 + cc_loss_B)
             fusionloss, _, _ = criteria_fusion(data_VIS, data_IR, data_Fuse)
             
@@ -275,13 +271,10 @@ for epoch in range(num_epochs):
                 BaseFuseLayer.parameters(), max_norm=clip_grad_norm_value, norm_type=2)
             nn.utils.clip_grad_norm_(
                 DetailFuseLayer.parameters(), max_norm=clip_grad_norm_value, norm_type=2)
-            #nn.utils.clip_grad_norm_(
-                #ContourletCNNLayer.parameters(), max_norm=clip_grad_norm_value, norm_type=2)
             optimizer1.step()
             optimizer2.step()
             optimizer3.step()
             optimizer4.step()
-            #optimizer5.step()
         # Determine approximate time left
         batches_done = epoch * len(loader['train']) + i
         batches_left = num_epochs * len(loader['train']) - batches_done
@@ -306,7 +299,6 @@ for epoch in range(num_epochs):
     if not epoch < epoch_gap:
         scheduler3.step()
         scheduler4.step()
-        #scheduler5.step()
     if optimizer1.param_groups[0]['lr'] <= 1e-6:
         optimizer1.param_groups[0]['lr'] = 1e-6
     if optimizer2.param_groups[0]['lr'] <= 1e-6:
@@ -315,14 +307,12 @@ for epoch in range(num_epochs):
         optimizer3.param_groups[0]['lr'] = 1e-6
     if optimizer4.param_groups[0]['lr'] <= 1e-6:
         optimizer4.param_groups[0]['lr'] = 1e-6
-    #if optimizer5.param_groups[0]['lr'] <= 1e-6:
-        #optimizer5.param_groups[0]['lr'] = 1e-6
+    
 if True:
     checkpoint = {
         'DIDF_Encoder': DIDF_Encoder.state_dict(),
         'DIDF_Decoder': DIDF_Decoder.state_dict(),
         'BaseFuseLayer': BaseFuseLayer.state_dict(),
         'DetailFuseLayer': DetailFuseLayer.state_dict(),
-        #'ContourletCNNLayer': ContourletCNNLayer.state_dict(),
     }
     torch.save(checkpoint, os.path.join("models/CDDFuse_" + timestamp + '.pth'))
