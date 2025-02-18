@@ -50,7 +50,7 @@ Run the training code to get started.
 python train.py
 ```
 ## Testing
-Our checkpoints can be found in './models/PromptFusion.pth', you can test our method through
+Our checkpoints can be found in [Google drive](https://drive.google.com/file/d/113WT_6Jz3sCx2x7qmaGBHftXGfzoQewg/view?usp=drive_link), you can test our method through
 ```
 python test.py
 ```
