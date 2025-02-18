@@ -3,7 +3,7 @@
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/wdhudiekou/UMF-CMGR/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/pytorch-1.8.1-%237732a8)](https://pytorch.org/)
+[![PyTorch](https://img.shields.io/badge/pytorch-2.1.1-%237732a8)](https://pytorch.org/)
 
 
 
@@ -22,8 +22,8 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 
 ## Requirements
 - CUDA 11.1
-- Python=3.8.10
-- Pytorch 1.8.1
+- Python=3.8.18
+- Pytorch 2.1.1
 ## Training
 1. Environment Preparation
 ```
