@@ -16,6 +16,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 </div>
 
 ## Updates
+[2025-2-18] We released checkpoints and codes of our method, you can test or train our method according to the instructions 
 [2024-12-05] Our paper is available online! [[Paper](https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878)] 
 
 ## Requirements
@@ -47,6 +48,8 @@ Run the training code to get started.
 ```
 python train.py
 ```
+## Testing
+
 ## Experiments results
 
 <div align=center>
