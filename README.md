@@ -21,7 +21,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 [2024-12-05] Our paper is available online! [[Paper](https://www.ieee-jas.net/en/article/doi/10.1109/JAS.2024.124878)] 
 
 ## Requirements
-- CUDA 11.1
+- CUDA 12.0
 - Python=3.8.18
 - Pytorch 2.1.1
 ## Training
