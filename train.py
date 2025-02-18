@@ -30,7 +30,7 @@ Configure our network
 ------------------------------------------------------------------------------
 '''
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 criteria_fusion = Fusionloss()
 model_str = 'PromptFusion'
 
