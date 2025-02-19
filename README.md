@@ -52,7 +52,7 @@ python train.py
 ## Testing
 Our checkpoints can be found in [Google drive](https://drive.google.com/file/d/113WT_6Jz3sCx2x7qmaGBHftXGfzoQewg/view?usp=drive_link), put it in 'PromptFusion/models/', you can test our method through
 ```
-python test.py
+python test_IVF.py
 ```
 ## Experiments results
 
