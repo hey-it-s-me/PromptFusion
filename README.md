@@ -1,5 +1,4 @@
-# DifIISR: Diffusion Model with Gradient Guidance for Infrared Image Super-Resolution
-
+# PromptFusion: Harmonized Semantic Prompt Learning for Infrared and Visible Image Fusion
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/wdhudiekou/UMF-CMGR/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
