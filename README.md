@@ -3,7 +3,7 @@
 [![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/wdhudiekou/UMF-CMGR/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.1.1-%237732a8)](https://pytorch.org/)
-![Visitor](https://shields.io/badge/dynamic/json?color=blue&label=Visitors&query=value&url=https://api.countapi.xyz/hit/your-username/your-repo-name)
+![Visitor](https://shields.io/badge/dynamic/json?color=blue&label=Visitors&query=value&url=https://api.countapi.xyz/hit/hey-it-s-me/PromptFusion)
 
 ### PromptFusion: Harmonized Semantic Prompt Learning for Infrared and Visible Image Fusion [IEEE/CAA JAS 2024]
 
