@@ -21,7 +21,7 @@ By Jinyuan Liu, Xingyuan Li, Zirui Wang, Zhiying Jiang, Wei Zhong, Wei Fan and B
 
 ## Requirements
 - CUDA 12.0
-- Python=3.8.18
+- Python=3.8.10
 - Pytorch 2.1.1
 ## Training
 1. Environment Preparation
