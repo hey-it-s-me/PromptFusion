@@ -65,13 +65,11 @@ python test_IVF.py
 ## Citation
 ```
 @article{liu2024promptfusion,
-  title={PromptFusion: Harmonized Semantic Prompt Learning for Infrared and Visible Image Fusion},
+  title={PromptFusion: Harmonized semantic prompt learning for infrared and visible image fusion},
   author={Liu, Jinyuan and Li, Xingyuan and Wang, Zirui and Jiang, Zhiying and Zhong, Wei and Fan, Wei and Xu, Bin},
   journal={IEEE/CAA Journal of Automatica Sinica},
-  volume={12},
-  pages={1--14},
   year={2024},
-  publisher={IEEE/CAA Journal of Automatica Sinica}
+  publisher={IEEE}
 }
 ```
 ## Acknowledgement
